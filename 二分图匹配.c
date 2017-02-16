@@ -61,6 +61,9 @@ int main()
     	edge[u][v] = 1;
     	edge[v][u] = 1;
     }
+
+    //for test
+    //或许没必要对所有点进行dfs，只需对二分图的一侧节点dfs即可
     for (i = 0; i < n; ++i)
     {
     	for (j = 0; j < n; ++j)
