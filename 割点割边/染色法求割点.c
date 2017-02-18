@@ -6,8 +6,7 @@
 
 int count = 0;
 
-void dfs(int **graph, int *book, int *color, int source, int mark){
-	int n = sizeof(graph[0]);
+void dfs(int **graph, int *book, int *color, int n, int source, int mark){
 	int i;
 	color[source] = mark;
 	if(count==n-1)
@@ -16,7 +15,7 @@ void dfs(int **graph, int *book, int *color, int source, int mark){
 		if(graph[source][i]==1 && book[i]==0){
 			book[i] = 1;
 			count++;
-			dfs(graph, book, color, i, mark);
+			dfs(graph, book, color, n, i, mark);
 		}
 	}
 }
@@ -58,14 +57,14 @@ int main()
 		graph[w][u] = 1;
 	}
 
-	//输入你想验证是否是割点的点,这里是零号节点
+	//输入你想验证是否是割点的点,把这里提前锁定，这里是零号节点
 	book[0] = 1;
 	color[0] = inf;
 
 	for(i=0;i<n;i++)
 	{
 		if(color[i]<0)
-			dfs(graph, book, color, i, mark++);
+			dfs(graph, book, color, n, i, mark++);
 	}
 
 	//for test
