@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #define inf 99999
 
+//bfs有个注意点，一旦某个节点入过队以后，那么就需要标记，以后不能重复入队
+
 
 void bfs(int **edge, int *book, int n, int source){
 	int i, j;
