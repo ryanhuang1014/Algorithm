@@ -71,6 +71,7 @@ int main()
 		graph[v][u] = 1;
 	}
 
+	//for test
 	//从0号节点到4号节点
 	step = bfs(graph, book, n, 0, 4);
 
