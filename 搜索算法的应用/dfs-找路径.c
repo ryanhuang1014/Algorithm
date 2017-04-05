@@ -26,10 +26,12 @@ void dfs(int **graph, int **book, int n, int m, int sum, int source_x, int sourc
 		return;
 	}
 	//共有上下左右四个方向
-	for(i=0;i<4;i++){
+	for(i=0;i<4;i++)
+	{
 		tx = source_x+next[i][0];
 		ty = source_y+next[i][1];
-		if(tx>=0 && ty>=0 && tx<n && ty<m && graph[tx][ty]!=1 && book[tx][ty]==0){
+		if(tx>=0 && ty>=0 && tx<n && ty<m && graph[tx][ty]!=1 && book[tx][ty]==0)
+		{
 			sum++;
 			book[tx][ty] = 1;
 			dfs(graph, book, n, m, sum, tx, ty, dest_x, dest_y);
